@@ -14,7 +14,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException
 class ThumbnailController {
     /**
      * Creates new thumbnail based on rectangle and parent screenshot.
-     * Save new data into storage.
+     * Save new data into cloud storage and cloud DB.
      * @param thumbnail
      * @return thumbnail object and status
      */
@@ -25,7 +25,7 @@ class ThumbnailController {
 
     /**
      * Updates exist thumbnail based on rectangle and parent screenshot.
-     * Save updated data into storage.
+     * Save updated into cloud storage and cloud DB.
      * @param thumbnail
      * @return thumbnail object and status
      */

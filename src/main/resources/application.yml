@@ -1,0 +1,23 @@
+firebase:
+  url: ""
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000 # Time after which the caller will observe a timeout and walk away from the command execution
+      circuitBreaker:
+        requestVolumeThreshold: 20 # The minimum number of requests in a rolling window (rollingStats.timeInMilliseconds) that will trip the circuit
+        sleepWindowInMilliseconds: 5000 # Time after which hystrix is trying again to determine if the circuit should again be closed
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 180000 # Duration of the statistical rolling window
+  threadpool:
+    default:
+      coreSize: 150 # Based on statistic from Hystrix dashboard - "requests per second at peak when healthy" × "99th percentile latency in seconds" + "some breathing room"
+      metrics:
+        rollingStats: # The following must be true — “metrics.rollingStats.timeInMilliseconds % metrics.rollingStats.numBuckets == 0”
+          numBuckets: 10
+          timeInMilliseconds: 180000

@@ -5,5 +5,5 @@ package com.alexbeez.keepmeup.keepmeupapi.domain
  */
 class Thumbnail extends Screenshot {
     public String watcherId
-    public Screenshot parentScreenshot
+    public String parentScreenshotId
 }

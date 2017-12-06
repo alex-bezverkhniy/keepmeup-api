@@ -14,6 +14,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException
 class ScreenshotController {
     /**
      * Creates new screenshot of website (screenshot.siteUrl)
+     * Save new data into cloud storage and cloud DB.
      * @param screenshot
      * @return screenshot object and status
      */
@@ -24,6 +25,7 @@ class ScreenshotController {
 
     /**
      * Updates exist screenshot of website (screenshot.siteUrl)
+     * Save updated into cloud storage and cloud DB.
      * @param screenshot
      * @return screenshot object and status
      */
